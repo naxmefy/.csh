@@ -10,7 +10,7 @@ my custom shell configuration, extension, etc.
 ```bash
 
 # bash
-echo "\nif [ -f ~/.csh/.cshrc ]; then\n\tsource ~/.csh/.cshrc\nfi\n" >> .zshrc
+echo "\nif [ -f ~/.csh/.cshrc ]; then\n\tsource ~/.csh/.cshrc\nfi\n" >> .bashrc
 
 # zsh
 echo "\nif [ -f ~/.csh/.cshrc ]; then\n\tsource ~/.csh/.cshrc\nfi\n" >> .zshrc
