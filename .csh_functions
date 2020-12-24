@@ -1,0 +1,26 @@
+_cshdebug() {
+    if [[ $CSH_DEBUG -eq 1 ]]; then
+        echo $@
+    fi        
+}
+
+_cshload() {
+    for fname in "$@"
+    do
+        if [ -f $fname ]; then
+            _cshdebug "source $fname"
+            source $fname
+        else
+            _cshdebug "$fname could not exists"
+        fi 
+    done
+}
+
+_cshswap() {
+    if [[ $1 -eq $2 ]]; then
+        echo $3
+    else
+        echo $2
+    fi
+}
+

@@ -1,5 +1,6 @@
-alias src='source $HOME/$CSH_SHELL_FILE'
-alias esrc='edit $HOME/$CSH_SHELL_FILE'
+alias cshsrc='source $CSH_HOME/.cshrc'
+alias cshedit='edit $CSH_HOME/.cshrc'
+alias cshdebug='CSH_DEBUG=$(_cshswap $CSH_DEBUG 0 1); source $CSH_HOME/.cshrc'
 
 alias ..='cd ..'
 
@@ -54,6 +55,14 @@ alias wget='wget -c'
 ## set some other defaults ##
 alias df='df -H'
 alias du='du -ch'
+
+## git
+alias lg='lazygit'
+alias ga='git add .'
+alias gc='git commit'
+alias gs='git status'
+alias gp='git push'
+alias gl='git log --oneline'
 
 # python
 alias venv='python -m venv env'

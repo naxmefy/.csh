@@ -1,26 +1,10 @@
 # my custom shell configuration / extension
-
-export CSH_DEBUG=1
-_cshdebug() {
-    if [[ $CSH_DEBUG -eq 1 ]]; then
-        echo $@
-    fi        
-}
-
-_cshload() {
-    for fname in "$@"
-    do
-        if [ -f $fname ]; then
-            _cshdebug "source $fname"
-            source $fname
-        else
-            _cshdebug "$fname could not exists"
-        fi 
-    done
-}
-
 export CSH_HOME="$( cd "$( dirname "$0" )" && pwd )"
+source $CSH_HOME/.csh_functions
 _cshdebug "\$CSH_HOME is $CSH_HOME"
+
+CSH_DEBUG="${CSH_DEBUG:-0}"
+_cshdebug "load csh with debug on"
 
 export CSH_SHELL_FILE=".$(ps | grep `echo $$` | awk '{ print $4 }')rc"
 _cshdebug "\$CSH_SHELL_FILE is $CSH_SHELL_FILE"
